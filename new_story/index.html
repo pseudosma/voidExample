@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
-        <link rel="stylesheet" href="https://pseudosma.github.io/voidExample/css/post.min.css">
-        <script src="https://pseudosma.github.io/voidExample/js/post.min.js"></script>
+        <link rel="stylesheet" href="../css/post.min.css">
+        <script src="../js/post.min.js"></script>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta title=New&#32;Story>
         
         <script>
+            function cleanPartialAddressForHugo(address) {
+                var retVal = address.replace(/"/gm,"");
+                if (!retVal.endsWith("/")) {
+                    retVal = retVal + "/";
+                }
+                return retVal;
+            }
+
             function getPageIndexInMenu(p) {
+                const s1 = `""`
+                const bu = cleanPartialAddressForHugo(s1);
                 var c = 0;
+                var u, ur, s2 = "";
                 if (Array.isArray(p)) {
                     var i = 0;
                     const l = window.location.href.split("?");
                     
-                        var u;
+                        s2 = `"new_story"`;
+                        ur = cleanPartialAddressForHugo(s2);
                         
-                            u = `"https://pseudosma.github.io/voidExample""""new_story"`.replace(/"/gm,"");
-                            if ( l[0] === u || l[0] === (u + "/")) {
+                            u = (bu + ur);
+                            if ( l[0] === u || l[0] + "/" === u) {
                                 c = i; 
                             }
                             p.push(u);
                             i ++;
                         
                     
-                        var u;
+                        s2 = `"story_with_chapters"`;
+                        ur = cleanPartialAddressForHugo(s2);
                         
                             
-                                u = `"https://pseudosma.github.io/voidExample""story_with_chapters/""story_with_chapters_1"`.replace(/"/gm,"");
+                                u = (bu + ur + `"story_with_chapters_1"`).replace(/"/gm,"");
                                 if ( l[0] === u || l[0] === (u + "/")) {
                                     c = i; 
                                 }
                                 p.push(u);
                                 i ++;
                             
-                                u = `"https://pseudosma.github.io/voidExample""story_with_chapters/""story_with_chapters_2"`.replace(/"/gm,"");
+                                u = (bu + ur + `"story_with_chapters_2"`).replace(/"/gm,"");
                                 if ( l[0] === u || l[0] === (u + "/")) {
                                     c = i; 
                                 }
@@ -43,10 +56,11 @@
                             
                         
                     
-                        var u;
+                        s2 = `""`;
+                        ur = cleanPartialAddressForHugo(s2);
                         
-                            u = `"https://pseudosma.github.io/voidExample"""""`.replace(/"/gm,"");
-                            if ( l[0] === u || l[0] === (u + "/")) {
+                            u = (bu + ur);
+                            if ( l[0] === u || l[0] + "/" === u) {
                                 c = i; 
                             }
                             p.push(u);
@@ -61,7 +75,7 @@
     <body>
         <div style="display: flex; justify-content: center;">
             <div style="display: flex; justify-content: center;">
-                <svg id="menu-wrapper">
+                <svg id="menu-wrapper" preserveAspectRatio="none">
                     <defs>
 <filter id="blur">
     <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
@@ -179,7 +193,7 @@
                         height="5"
                         fill="#FFF"
                     />
-                    <rect class="menu-item unscalable" onclick="home('https:\/\/pseudosma.github.io\/voidExample')"
+                    <rect class="menu-item unscalable" onclick="home('')"
                         x="205"
                         y="16"
                         width="31"
@@ -198,7 +212,7 @@
                             const p = [];
                             const i = getPageIndexInMenu(p);
                             
-                            if (i <  3  &&  3  !== 0) {
+                            if (i <  3  - 1 &&  3  !== 0) {
                                 link(p[i + 1]);
                             }
                         })();'
@@ -212,32 +226,20 @@
                   </svg>
               </div>
             <div id="background">
-                <svg class="circle" width="95%" height="95%">
+                <svg class="circle" width="95%" height="95%" preserveAspectRatio="none">
     <defs>
-        <filter id="f1">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
-        </filter>
         <filter id="f2">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
         </filter>
     </defs>
     <circle
         class="inner-circle" 
         stroke="#FFF" 
-        stroke-width="2" 
+        stroke-width="1" 
         fill="none"
     /> 
-    <circle
-        class="inner-circle" 
-        id ="blur" 
-        stroke="#FFF" 
-        stroke-width="3" 
-        filter="url(#f1)"
-        fill="none"
-    />
     <circle 
-        class="inner-circle" 
-        id ="blur" 
+        class="inner-circle"
         stroke="#FFF" 
         stroke-width="3" 
         filter="url(#f2)"

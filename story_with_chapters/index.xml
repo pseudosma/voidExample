@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Story_with_chapters on void</title>
-    <link>https://pseudosma.github.io/voidExample/story_with_chapters/</link>
+    <link>/story_with_chapters/</link>
     <description>Recent content in Story_with_chapters on void</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://pseudosma.github.io/voidExample/story_with_chapters/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/story_with_chapters/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chapter 1</title>
-      <link>https://pseudosma.github.io/voidExample/story_with_chapters/story_with_chapters_1/</link>
+      <link>/story_with_chapters/story_with_chapters_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pseudosma.github.io/voidExample/story_with_chapters/story_with_chapters_1/</guid>
+      <guid>/story_with_chapters/story_with_chapters_1/</guid>
       <description>Text goes here</description>
     </item>
     
     <item>
       <title>Chapter 2</title>
-      <link>https://pseudosma.github.io/voidExample/story_with_chapters/story_with_chapters_2/</link>
+      <link>/story_with_chapters/story_with_chapters_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pseudosma.github.io/voidExample/story_with_chapters/story_with_chapters_2/</guid>
+      <guid>/story_with_chapters/story_with_chapters_2/</guid>
       <description>Text goes here</description>
     </item>
     

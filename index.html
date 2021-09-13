@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
-	<meta name="generator" content="Hugo 0.82.0" />
-        <link rel="stylesheet" href="https://pseudosma.github.io/voidExample/css/index.min.css">
-        <script src="https://pseudosma.github.io/voidExample/js/index.min.js"></script>
+	<meta name="generator" content="Hugo 0.88.1" />
+        <link rel="stylesheet" href="css/index.min.css">
+        <script src="js/index.min.js"></script>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta title=void>
     </head>
     <body>
         <div style="display: flex; justify-content: center;">
-            <svg id="menu-wrapper">
+            <svg id="menu-wrapper" preserveAspectRatio="none">
                 <defs>
 <filter id="blur">
     <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
@@ -110,18 +110,24 @@
                 <rect class="menu-item unscalable" onclick='(function(){
                       const p = [];
                       
-                        
-                          p.push("".replace(/(\s|")/gm,""));
-                        
-                      
-                        
+                        if (&#34;new_story&#34; !== "" && &#34;new_story&#34; !== "\"\"") {
                           
-                          p.push("story_with_chapters\/story_with_chapters_1".replace(/(\s|")/gm,""));
-                        
+                            p.push("new_story".replace(/(\s|")/gm,""));
+                          
+                        }
                       
-                        
-                          p.push("new_story".replace(/(\s|")/gm,""));
-                        
+                        if (&#34;story_with_chapters&#34; !== "" && &#34;story_with_chapters&#34; !== "\"\"") {
+                          
+                            
+                            p.push("story_with_chapters_1".replace(/(\s|")/gm,""));
+                          
+                        }
+                      
+                        if (&#34;&#34; !== "" && &#34;&#34; !== "\"\"") {
+                          
+                            p.push("".replace(/(\s|")/gm,""));
+                          
+                        }
                       
                       link(p[Math.floor(Math.random() * (p.length))]);
                   })();'
@@ -135,32 +141,20 @@
               </svg>
           </div>
         <div id="background">
-            <svg class="circle" width="95%" height="95%">
+            <svg class="circle" width="95%" height="95%" preserveAspectRatio="none">
     <defs>
-        <filter id="f1">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
-        </filter>
         <filter id="f2">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
         </filter>
     </defs>
     <circle
         class="inner-circle" 
         stroke="#FFF" 
-        stroke-width="2" 
+        stroke-width="1" 
         fill="none"
     /> 
-    <circle
-        class="inner-circle" 
-        id ="blur" 
-        stroke="#FFF" 
-        stroke-width="3" 
-        filter="url(#f1)"
-        fill="none"
-    />
     <circle 
-        class="inner-circle" 
-        id ="blur" 
+        class="inner-circle"
         stroke="#FFF" 
         stroke-width="3" 
         filter="url(#f2)"
@@ -188,7 +182,7 @@
                 <div id="navigate" onclick="revealPosts()">
                     <span>enter</span>
                     <span>
-                        <svg class="small-wide-button-wrapper">
+                        <svg class="small-wide-button-wrapper" preserveAspectRatio="none">
   <polygon class="scalable"
     points="0,0 12.5,7.5 0,15" 
     fill="#FFF"
@@ -214,7 +208,7 @@
                     <div style="text-align: right;">
                       
                         <span onclick="link('new_story')">
-                          <svg class="small-wide-button-wrapper">
+                          <svg class="small-wide-button-wrapper" preserveAspectRatio="none">
   <polygon class="scalable"
     points="0,0 12.5,7.5 0,15" 
     fill="#FFF"
@@ -252,8 +246,8 @@
                                 </td>
                               
                               <td>
-                                <span onclick="link('story_with_chapters\/story_with_chapters_1')">
-                                  <svg class="small-wide-button-wrapper">
+                                <span onclick="link('story_with_chapters_1')">
+                                  <svg class="small-wide-button-wrapper" preserveAspectRatio="none">
   <polygon class="scalable"
     points="0,0 12.5,7.5 0,15" 
     fill="#FFF"
@@ -276,7 +270,7 @@
                                   <table class="chapters" style="width: 100%;">
                                     <tr>
                                       <td class="td-hidden-at-small" width="10%">
-                                        <svg style="max-width: 30px;">
+                                        <svg style="max-width: 30px;" preserveAspectRatio="none">
     <path
       d="m16 0c-15 30 0 45-1 60c0 0 0 15-15 15c15 0 15 15 15 15c1 15-14 30 1 60" 
       stroke="#FFF"
@@ -291,7 +285,7 @@
                                         </div>
                                       </td>
                                       <td class="td-hidden-at-small" width="10%">
-                                        <svg style="max-width: 30px;">
+                                        <svg style="max-width: 30px;" preserveAspectRatio="none">
     <path
       d="m0 0c15 30 0 45 1 60c0 0 0 15 15 15c-15 0-15 15-15 15c-1 15 14 30-1 60" 
       stroke="#FFF"
@@ -305,8 +299,8 @@
                                 </td>
                               
                               <td>
-                                <span onclick="link('story_with_chapters\/story_with_chapters_2')">
-                                  <svg class="small-wide-button-wrapper">
+                                <span onclick="link('story_with_chapters_2')">
+                                  <svg class="small-wide-button-wrapper" preserveAspectRatio="none">
   <polygon class="scalable"
     points="0,0 12.5,7.5 0,15" 
     fill="#FFF"
@@ -337,7 +331,7 @@
                     <div style="text-align: right;">
                       
                         <span onclick="link('')">
-                          <svg class="small-wide-button-wrapper">
+                          <svg class="small-wide-button-wrapper" preserveAspectRatio="none">
   <polygon class="scalable"
     points="0,0 12.5,7.5 0,15" 
     fill="#FFF"
